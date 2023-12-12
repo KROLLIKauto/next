@@ -4,6 +4,7 @@ import {
   UserGroupIcon,
   HomeIcon,
   DocumentDuplicateIcon,
+  ChatBubbleBottomCenterTextIcon
 } from '@heroicons/react/24/outline';
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -18,6 +19,7 @@ const links = [
     href: '/dashboard/invoices',
     icon: DocumentDuplicateIcon,
   },
+  { name: 'Chat', href: '/dashboard/chat', icon: ChatBubbleBottomCenterTextIcon },
   { name: 'Customers', href: '/dashboard/customers', icon: UserGroupIcon },
 ];
 
@@ -40,8 +42,8 @@ export default function NavLinks() {
             )}
           >
             <LinkIcon className="w-6" />
-            <p className="hidden md:block">{link.name}</p>
-          </Link>
+              <p className="hidden md:block">{link.name}</p>
+            </Link>
         );
       })}
     </>
