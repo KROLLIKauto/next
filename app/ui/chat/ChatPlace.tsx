@@ -27,7 +27,7 @@ const ChatPlace = () => {
   const getMessage = async () => {
     try {
       const { data } = await axios.get('http://localhost:3080/get-messages')
-      setChatArr(prev => [data, ...prev])
+      setChatArr(prev => [data, ...prev] as any)
       getMessage()
     } catch(e) {
       setTimeout(() => {
@@ -40,7 +40,7 @@ const ChatPlace = () => {
   return (
     <div className="border border-gray-200">
       <div>
-        {chatArr.map((message) => {
+        {chatArr.map((message: any) => {
           return <div key={message.id} className="m-4 bg-blue-200 max-w-max">
             <div>{message.user}</div>
             <div>{message.text}</div>
