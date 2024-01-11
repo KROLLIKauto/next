@@ -21,7 +21,7 @@ export default async function SelectChatUser({ customers } : {customers: Custome
       onChange={(e)=>selectValue(e.target.value)}
     >
       <option value="" disabled>
-        Select a customer
+        Выбрать пользователя
       </option>
       {customers.map((customer) => (
         <option key={customer.id} value={customer.id} >
